@@ -1,0 +1,11 @@
+{
+  "name": "selbach",
+  "version": "1.0.0",
+  "description": "Maria Selbach - Kindertagespflege",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fabian Marcus",
+  "license": "UNLICENSED"
+}
