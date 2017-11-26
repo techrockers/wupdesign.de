@@ -1,3 +1,18 @@
-Stylesheets kompilieren mit: 
+# w+ddesign
 
-sass --watch style.scss:style.css
+## Installation
+
+Kompilieren mittels
+
+```
+webpack
+```
+
+Watchen mit
+
+```
+webpack --watch
+```
+
+## Deplyoment
+
