@@ -1,17 +1,17 @@
-# w+ddesign
+# w+pdesign
 
 ## Installation
 
 Kompilieren mittels
 
 ```
-webpack
+npm run prod
 ```
 
 Watchen mit
 
 ```
-webpack --watch
+npm run dev
 ```
 
 ## Deplyoment

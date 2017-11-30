@@ -1,15 +1,16 @@
 {
-  "name": "selbach",
+  "name": "wupdesign",
   "version": "1.0.0",
-  "description": "Maria Selbach - Kindertagespflege",
+  "description": "jörg weinrauch - gestaltung + kommunikation - druck",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --watch",
+    "prod": "webpack"
   },
   "author": "Fabian Marcus",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
-    "bootstrap": "^4.0.0-beta.2",
+    "bootstrap-sass": "^3.3.7",
     "css-loader": "^0.28.7",
     "eslint": "^4.12.0",
     "instafeed.js": "^1.4.1",

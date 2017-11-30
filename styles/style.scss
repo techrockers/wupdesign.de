@@ -1,3 +1,5 @@
+@import "./grid";
+
 $screen-xxs: 480px;
 $screen-xs: 600px;
 $screen-md: 768px;
@@ -8,7 +10,7 @@ $weiss: #fff;
 $orange: #f39717;
 $hellgruen: #cbda87;
 $gruen: #758d19;
-$dunkelgruen: #464d27;
+$dunkelgruen: #464d27; 
 
 $font: #000;
 $links: $font;
@@ -85,6 +87,10 @@ img {
 	.content {
 		float: none;
 		display: block;
+	}
+
+	.images img {
+		margin-bottom: 10px;
 	}
 }
 
