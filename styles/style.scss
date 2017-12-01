@@ -1,4 +1,5 @@
 @import "./grid";
+@import "./card";
 
 $screen-xxs: 480px;
 $screen-xs: 600px;
@@ -160,14 +161,8 @@ img {
 
 .article-3 {
 	background-color: $gruen;
-}
-
-.article-4 {
-	background: $hellgruen;
-}
-
-.article-5 {
-	background: $dunkelgruen;
+	background: url('../img/gruen-dreiklang.svg') top left no-repeat;
+	background-size: cover;
 }
 
 .article-6 {

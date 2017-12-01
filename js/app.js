@@ -11,13 +11,35 @@ const insta = fetch(url.replace('{token}', token))
 function showInstaImages(json) {
     const data = json.data;
     const $container = document.querySelector('.insta');
-    console.log($container);
 
-    for(let i=0; i < data.length; i+=1) {
+    for (let i=0; i < data.length; i+=1) {
         const date = data[i];
+
+        const card = document.createElement('div');
+        const front = document.createElement('div');
+        const back = document.createElement('div');
+
+        const picture = document.createElement('picture');
+        const source = document.createElement('source');
         const img = document.createElement('img');
-        img.src =  date.images.standard_resolution.url;
-        img.className = 'col-xs-4 col-sm-4 img-responsive img-1';
-        $container.appendChild(img);
+
+        card.className = "col-xs-4 col-sm-4 card";
+        front.className = "front";
+        back.className = "back";
+
+        source.srcset = date.images.standard_resolution.url;
+        source.media = '(min-width: 769px)';
+
+        img.src =  date.images.low_resolution.url;
+        img.className = 'img-responsive';
+
+        picture.appendChild(source);
+        picture.appendChild(img);
+
+        front.appendChild(picture);
+        card.appendChild(front);
+        card.appendChild(back);
+
+        $container.appendChild(card);
     }
 }
