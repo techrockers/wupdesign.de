@@ -18,6 +18,9 @@ $links: $font;
 
 $m-b-pic: 1em;
 
+html {
+	height: 100%;
+}
 
 body {
 	padding: 0;
@@ -68,6 +71,10 @@ a:hover {
 	text-decoration: none;
 }
 
+picture {
+	display: block;
+}
+
 img {
 	max-width: 100%;
 }
@@ -88,10 +95,6 @@ img {
 	.content {
 		float: none;
 		display: block;
-	}
-
-	.images img {
-		margin-bottom: 10px;
 	}
 }
 

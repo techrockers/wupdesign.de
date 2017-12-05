@@ -1,21 +1,16 @@
-.label {
+.card {
+    display: block;
+    margin-bottom: 30px;
     -webkit-perspective: 1000px;
     perspective: 1000px;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    display: block;
-    width: 300px;
-    height: 200px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    cursor: pointer;
 }
 
-.card {
+.card__container {
     position: relative;
+    height: 100%;
+    width: 100%;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-transition: all 600ms;
@@ -23,41 +18,37 @@
     z-index: 20;
 }
 
-    .card div {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background: #FFF;
-        text-align: center;
-        line-height: 200px;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 2px;
-    }
+// front + back
+.card__container > div {
+    background:transparent;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 2px;
+}
 
-    .card .back {
-        background: #222;
-        color: #FFF;
-        -webkit-transform: rotateX(180deg);
-        transform: rotateX(180deg);
-    }
+.card__container > div.back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: #FFF;
+    background: #222;
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
 
-label:hover .card {
+.card:hover > div {
     -webkit-transform: rotateX(20deg);
     transform: rotateX(20deg);
     box-shadow: 0 20px 20px rgba(50,50,50,.2);
 }
 
-input {
-    display: none;
-}
-
-:checked + .card {
+.flipped.card {
     transform: rotateX(180deg);
     -webkit-transform: rotateX(180deg);
 }
 
-label:hover :checked + .card {
+.flipped.card:hover .card__container {
     transform: rotateX(160deg);
     -webkit-transform: rotateX(160deg);
     box-shadow: 0 20px 20px rgba(255,255,255,.2);
