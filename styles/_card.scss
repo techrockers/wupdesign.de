@@ -1,6 +1,6 @@
 $card-height: 250px;
 $card-width: 250px;
-$cards-container-max-width: 960px;
+$cards-container-max-width: 1000px;
 
 .insta-cards {
     display: flex;
@@ -9,7 +9,6 @@ $cards-container-max-width: 960px;
 	flex-wrap: nowrap;
 	overflow-x: scroll;
 	overflow-y: hidden;
-	justify-content: space-between;
 
 	@media(min-width: $screen-xs) {
         max-width: $cards-container-max-width;
@@ -18,72 +17,72 @@ $cards-container-max-width: 960px;
         flex-wrap: wrap;
         overflow: visible;
         padding-bottom: 0;
+        justify-content: space-around;
 	}
 }
 
 
 .card {
     display: inline-block;
-    margin: 1em;
     min-width: $card-width;
     min-height: $card-height;
+    margin: 1em;
     cursor: pointer;
     font-size: 0.9em;
     perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
 
     @media(min-width: $screen-md) {
-        min-width: $card-width * 1.25;
-        min-height: $card-height * 1.25;
+        min-width: $card-width + 50px;
+        min-height: $card-height + 50px;
     }
-    @media(min-width: $screen-lg) {
-        min-width: $card-width * 1.75;
-        min-height: $card-height * 1.75;
-	}
 }
 
 .card__container {
     position: relative;
-    height: 100%;
-    width: 100%;
+    min-width: $card-width;
+    min-height: $card-height;
     z-index: 20;
+    -webkit-transition: all 600ms;
     transition: all 600ms;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+
+    @media(min-width: $screen-md) {
+        min-width: $card-width + 50px;
+        min-height: $card-height + 50px;
+    }
 }
 
 // front + back
 .card__container > div {
     position: absolute;
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-    height: 100%;
+    min-width: $card-width;
+    min-height: $card-height;
     text-align: center;
-    background:transparent;
-    -webkit-backfacmailce-visibility: hidden;
+    background: transparent;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+
+    @media(min-width: $screen-md) {
+        min-width: $card-width + 50px;
+        min-height: $card-height + 50px;
+    }
 }
 
 .card__container > .card__back {
-    overflow: hidden;
     padding: 1em;
     color: #FFF;
     background: #222;
+    -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
-}
-
-.card:hover > div {
-    transform: rotateX(20deg);
-    box-shadow: 0 20px 20px rgba(50,50,50,.2);
 }
 
 .flipped.card > div {
+    -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
-}
-
-.flipped.card:hover > div {
-    transform: rotateX(160deg);
-    box-shadow: 0 20px 20px rgba(255,255,255,.2);
 }
 
 .card__cta {
@@ -95,4 +94,21 @@ $cards-container-max-width: 960px;
     transform: 
         rotate(-45deg) 
         translate(25%, -20%);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
+
+/** 
+ * Not really working on touch devices
+ * looks shitty anyways
+
+.card:hover > div {
+    -webkit-transform: rotateX(20deg);
+    transform: rotateX(20deg);
+    box-shadow: 0 20px 20px rgba(50,50,50,.2);
+}
+.flipped.card:hover > div {
+    transform: rotateX(160deg);
+    box-shadow: 0 20px 20px rgba(255,255,255,.2);
+}
+**/

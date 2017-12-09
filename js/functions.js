@@ -1,4 +1,4 @@
-const config = {
+var config = {
     classes: {
         card: ".card",
         img: "img",
@@ -12,33 +12,32 @@ const config = {
 }
 
 function setFlipEffectHandler() {
-    const $container = document.querySelector(config.classes.container);
-    const cards = $container.querySelectorAll(config.classes.card);
+    var $container = document.querySelector(config.classes.container);
+    var cards = $container.querySelectorAll(config.classes.card);
 
-    for(let i=0; i < cards.length; i+=1) {
-        const card = cards[i];
-        const classes = card.className.split(" ");
-
+    for(var i=0; i < cards.length; i+=1) {
+        var card = cards[i];
+        
         card.addEventListener('click', function(e) {
-            const el = e.target;
-            const index = classes.indexOf(config.status.flipped);
+            var classes = this.className.split(" ");
+            var index = classes.indexOf(config.status.flipped);
             
             if(index >= 0) {
                 classes.splice(index, 1);
             } else {
                 classes.push(config.status.flipped);
             }
-            card.className = classes.join(" ");
+            this.className = classes.join(" ");
         });
     }
 }
 
 export function showInstaImages(json) {
-    const data = json.data;
-    const $container = document.querySelector(config.classes.container);
+    var data = json.data;
+    var $container = document.querySelector(config.classes.container);
 
-    for (let i=0; i < data.length; i+=1) {
-        const 
+    for (var i=0; i < data.length; i+=1) {
+        var 
             date = data[i],
             card = document.createElement('div'),
             text = document.createElement('span'),

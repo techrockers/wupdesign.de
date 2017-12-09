@@ -29,5 +29,12 @@ module.exports = {
             { from: "./img", to: "img" },
             { from: "./index.html", to: "" } 
         ]),
+        new webpack.LoaderOptionsPlugin({
+            debug: false,
+            devtool: false
+        }),
+        new webpack.optimize.UglifyJsPlugin({ 
+            output: { comments: false } 
+        }),
     ]
 };
