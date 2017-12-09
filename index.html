@@ -11,7 +11,7 @@
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" type="text/css" href="dist/main.css" />
+		<link rel="stylesheet" type="text/css" href="main.css" />
 	</head>
 
 	<body>
@@ -52,11 +52,11 @@
 				<article class="row article article-3">
 					<h2>projekte</h2>
 
-					<div class="images swipeable insta">
+					<div class="images swipeable insta-cards">
 					</div>
 				</article>
 
-				<article class="row article article-6">
+				<article class="row article article-4">
 					<div class="col-xxs col-xs-6 col-sm-6 col-md-4">
 						<img src="img/joerg-weinrauch.png" />
 					</div>
@@ -76,7 +76,7 @@
 					</div>
 				</article>
 
-				<article class="row article article-7">
+				<article class="row article article-5">
 					<h2>kontakt</h2>
 
 					<div class="col-xxs col-xs-6 gmap">
@@ -98,7 +98,7 @@
 					<div class="clear"></div>
 				</article>
 
-				<article class="row article article-8">
+				<article class="row article article-6">
 					<div class="milky-container">
 						<div class="col-xs-hidden col-sm-4"></div>
 
@@ -132,11 +132,26 @@
 					</div>
 				</article>
 
-				<article class="row article article-9">
+				<article class="row article article-7">
 				</article>
 			</section>
 		</div>
 
-		<script src="dist/bundle.js" async></script>
+		<script type="text/template" id="card" class="card-template">
+			<div class="card">
+				<div class="card__container">
+					<div class="card__front">
+						<picture>
+							<source srcset="" media="(min-width: 769px)" />
+							<img src="" />
+						</picture>
+						<div class="card__cta">Mehr Infos!</div>
+					</div>
+					<div class="card__back">
+					</div>
+				</div>
+			</div>
+		</script>
+		<script src="bundle.js" async></script>
 	</body>
 </html>	

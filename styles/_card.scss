@@ -1,55 +1,98 @@
+$card-height: 250px;
+$card-width: 250px;
+$cards-container-max-width: 960px;
+
+.insta-cards {
+    display: flex;
+	padding-bottom: 1.5em;
+	flex-flow: nowrap;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	justify-content: space-between;
+
+	@media(min-width: $screen-xs) {
+        max-width: $cards-container-max-width;
+        margin: 0 auto;
+        flex-flow: row;
+        flex-wrap: wrap;
+        overflow: visible;
+        padding-bottom: 0;
+	}
+}
+
+
 .card {
-    display: block;
-    margin-bottom: 30px;
-    -webkit-perspective: 1000px;
+    display: inline-block;
+    margin: 1em;
+    min-width: $card-width;
+    min-height: $card-height;
+    cursor: pointer;
+    font-size: 0.9em;
     perspective: 1000px;
-    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+
+    @media(min-width: $screen-md) {
+        min-width: $card-width * 1.25;
+        min-height: $card-height * 1.25;
+    }
+    @media(min-width: $screen-lg) {
+        min-width: $card-width * 1.75;
+        min-height: $card-height * 1.75;
+	}
 }
 
 .card__container {
     position: relative;
     height: 100%;
     width: 100%;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transition: all 600ms;
-    transition: all 600ms;
     z-index: 20;
+    transition: all 600ms;
+    transform-style: preserve-3d;
 }
 
 // front + back
 .card__container > div {
-    background:transparent;
+    position: absolute;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    -webkit-backface-visibility: hidden;
+    background:transparent;
+    -webkit-backfacmailce-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 2px;
 }
 
-.card__container > div.back {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+.card__container > .card__back {
+    overflow: hidden;
+    padding: 1em;
     color: #FFF;
     background: #222;
-    -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
 }
 
 .card:hover > div {
-    -webkit-transform: rotateX(20deg);
     transform: rotateX(20deg);
     box-shadow: 0 20px 20px rgba(50,50,50,.2);
 }
 
-.flipped.card {
+.flipped.card > div {
     transform: rotateX(180deg);
-    -webkit-transform: rotateX(180deg);
 }
 
-.flipped.card:hover .card__container {
+.flipped.card:hover > div {
     transform: rotateX(160deg);
-    -webkit-transform: rotateX(160deg);
     box-shadow: 0 20px 20px rgba(255,255,255,.2);
+}
+
+.card__cta {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.5em;
+    background-color: rgba(255,255,255, 0.7);
+    transform: 
+        rotate(-45deg) 
+        translate(25%, -20%);
 }
