@@ -1,6 +1,5 @@
 $card-height: 250px;
 $card-width: 250px;
-$cards-container-max-width: 1000px;
 
 .insta-cards {
     display: flex;
@@ -11,7 +10,6 @@ $cards-container-max-width: 1000px;
 	overflow-y: hidden;
 
 	@media(min-width: $screen-xs) {
-        max-width: $cards-container-max-width;
         margin: 0 auto;
         flex-flow: row;
         flex-wrap: wrap;
